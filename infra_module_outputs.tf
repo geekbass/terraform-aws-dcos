@@ -1,8 +1,3 @@
-output "infrastructure.aws_key_name" {
-  description = "This is the AWS key name used for the cluster"
-  value       = "${module.dcos-infrastructure.aws_key_name}"
-}
-
 output "infrastructure.bootstrap.instance" {
   description = "Bootstrap instance ID"
   value       = "${module.dcos-infrastructure.bootstrap.instance}"
@@ -109,19 +104,19 @@ output "infrastructure.iam.agent_profile" {
   description = "Name of the agent profile"
 }
 
-output "infrastructure.lb.public_agents_dns_name" {
+output "infrastructure.elb.public_agents_dns_name" {
   description = "This is the load balancer to reach the public agents"
-  value       = "${module.dcos-infrastructure.lb.public_agents_dns_name}"
+  value       = "${module.dcos-infrastructure.elb.public_agents_dns_name}"
 }
 
-output "infrastructure.lb.masters_dns_name" {
+output "infrastructure.elb.masters_dns_name" {
   description = "This is the load balancer to access the DC/OS UI"
-  value       = "${module.dcos-infrastructure.lb.masters_dns_name}"
+  value       = "${module.dcos-infrastructure.elb.masters_dns_name}"
 }
 
-output "infrastructure.lb.masters_internal_dns_name" {
+output "infrastructure.elb.masters_internal_dns_name" {
   description = "This is the load balancer to access the masters internally in the cluster"
-  value       = "${module.dcos-infrastructure.lb.masters_internal_dns_name}"
+  value       = "${module.dcos-infrastructure.elb.masters_internal_dns_name}"
 }
 
 output "infrastructure.security_groups.internal" {
@@ -129,27 +124,3 @@ output "infrastructure.security_groups.internal" {
   value       = "${module.dcos-infrastructure.security_groups.internal}"
 }
 
-output "infrastructure.security_groups.admin" {
-  description = "This is the id of the admin security_group that the cluster is in"
-  value       = "${module.dcos-infrastructure.security_groups.admin}"
-}
-
-output "infrastructure.vpc.id" {
-  description = "This is the id of the VPC the cluster is in"
-  value       = "${module.dcos-infrastructure.vpc.id}"
-}
-
-output "infrastructure.vpc.cidr_block" {
-  description = "This is the id of the VPC the cluster is in"
-  value       = "${module.dcos-infrastructure.vpc.cidr_block}"
-}
-
-output "infrastructure.vpc.main_route_table_id" {
-  description = "This is the id of the VPC's main routing table the cluster is in"
-  value       = "${module.dcos-infrastructure.vpc.main_route_table_id}"
-}
-
-output "infrastructure.vpc.subnet_ids" {
-  description = "This is the list of subnet_ids the cluster is in"
-  value       = ["${module.dcos-infrastructure.vpc.subnet_ids}"]
-}
