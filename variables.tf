@@ -220,3 +220,13 @@ variable "subnet_range" {
   description = "Private IP space to be used in CIDR format"
   default     = "172.12.0.0/16"
 }
+
+variable "bootstrap_user_data" {
+  description = "User data to be used on these instances (cloud-init)"
+  default     = ""
+}
+
+variable "user_data" {
+  description = "User data to be used on these instances (cloud-init)"
+  default     = ""
+}

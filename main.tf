@@ -89,8 +89,9 @@ locals {
 }
 
 module "dcos-infrastructure" {
-  source  = "dcos-terraform/infrastructure/aws"
-  version = "~> 0.1.10"
+  #source  = "dcos-terraform/infrastructure/aws"
+  source  = "git::https://github.com/geekbass/terraform-aws-infrastructure"
+  #version = "~> 0.1.10"
 
   admin_ips                                  = "${var.admin_ips}"
   availability_zones                         = "${var.availability_zones}"
@@ -135,6 +136,8 @@ module "dcos-infrastructure" {
   ssh_public_key_file                        = "${var.ssh_public_key_file}"
   subnet_range                               = "${var.subnet_range}"
   tags                                       = "${var.tags}"
+  bootstrap_user_data                        = "${var.bootstrap_user_data}"
+  user_data                                  = "${var.user_data}"
 
   # If defining external exhibitor storage
   aws_s3_bucket = "${var.dcos_s3_bucket}"
