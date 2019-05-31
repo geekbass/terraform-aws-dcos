@@ -99,11 +99,6 @@ output "infrastructure.public_agents.prereq-id" {
   value       = "${module.dcos-infrastructure.public_agents.prereq-id}"
 }
 
-output "infrastructure.iam.agent_profile" {
-  value       = "${module.dcos-infrastructure.iam.agent_profile}"
-  description = "Name of the agent profile"
-}
-
 output "infrastructure.elb.public_agents_dns_name" {
   description = "This is the load balancer to reach the public agents"
   value       = "${module.dcos-infrastructure.elb.public_agents_dns_name}"
@@ -118,9 +113,3 @@ output "infrastructure.elb.masters_internal_dns_name" {
   description = "This is the load balancer to access the masters internally in the cluster"
   value       = "${module.dcos-infrastructure.elb.masters_internal_dns_name}"
 }
-
-output "infrastructure.security_groups.internal" {
-  description = "This is the id of the internal security_group that the cluster is in"
-  value       = "${module.dcos-infrastructure.security_groups.internal}"
-}
-
